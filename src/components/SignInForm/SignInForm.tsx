@@ -1,5 +1,6 @@
 import * as React from 'react';
 import SignForm from '../SignForm';
+import InputGroup from '../InputGroup';
 
 export default function SignInForm(props: ISignUpFormProps) {
     return <SignForm
@@ -17,32 +18,19 @@ export default function SignInForm(props: ISignUpFormProps) {
         facebookClickAction={props.facebookClickAction}
         twiterClickAction={props.twiterClickAction}
     >
-        <span className="bmd-form-group">
-            <div className="input-group">
-                <span className="input-group-addon">
-                    <i className="far fa-envelope" />
-                </span>
-                <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Email..."
-                    onChange={props.emailChanged}
-                />
-            </div>
-        </span>
-        <span className="bmd-form-group">
-            <div className="input-group">
-                <span className="input-group-addon">
-                    <i className="fas fa-lock" />
-                </span>
-                <input
-                    type="password"
-                    className="form-control"
-                    placeholder="Password..."
-                    onChange={props.passwordChanged}
-                />
-            </div>
-        </span>
+        <InputGroup
+            type="email"
+            iconClass="far fa-envelope"
+            placeholder="Email..."
+            onChange={props.emailChanged}
+        />
+
+        <InputGroup
+            type="password"
+            iconClass="fas fa-lock"
+            placeholder="Password..."
+            onChange={props.passwordChanged}
+        />
     </SignForm>
 }
 
@@ -54,7 +42,6 @@ export interface ISignUpFormProps {
     twiterClickAction?: VoidFunction,
     facebookClickAction?: VoidFunction,
 
-    nameChanged?: VoidFunction,
     emailChanged?: VoidFunction,
     passwordChanged?: VoidFunction
 }
