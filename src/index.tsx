@@ -1,11 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './lib/SignIn';
+import App from './components/SignIn';
 import registerServiceWorker from './registerServiceWorker';
-import './index.css';
+import './index.scss';
 
 ReactDOM.render(
-  <App />,
+  <div style={{width: '400px', margin: '0 auto'}}><App /></div>,
   document.getElementById('root') as HTMLElement
 );
 registerServiceWorker();
