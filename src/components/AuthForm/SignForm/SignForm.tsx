@@ -9,10 +9,10 @@ export default function SignForm(props: ISignFormProps) {
                 <CardHeader className={`card-header-${props.mainColor} text-center`}>
                     <h4>{props.title}</h4>
                     <div className="social-line">
-                        <Button className="btn-just-icon btn-link" onClick={props.facebookClickAction}>
+                        <Button className="btn-just-icon btn-link" disabled onClick={props.facebookClickAction}>
                             <i className="fab fa-facebook-square" />
                         </Button>
-                        <Button className="btn-just-icon btn-link" onClick={props.twiterClickAction}>
+                        <Button className="btn-just-icon btn-link" disabled onClick={props.twiterClickAction}>
                             <i className="fab fa-twitter" />
                         </Button>
                         <Button className="btn-just-icon btn-link" onClick={props.googleClickAction}>

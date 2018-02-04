@@ -35,7 +35,7 @@ export default function SignInForm(props: ISignInFormProps) {
 
         <CheckboxGroup
             title="Save me"
-            onChange={() => alert("Changed")}
+            onChange={props.saveMeChanged}
         />
     </SignForm>
 }
@@ -43,6 +43,7 @@ export default function SignInForm(props: ISignInFormProps) {
 export interface ISignInFormProps {
     mainAction?: VoidFunction,
     secondAction?: VoidFunction,
+    saveMeChanged?: VoidFunction,
 
     googleClickAction?: VoidFunction,
     twiterClickAction?: VoidFunction,
