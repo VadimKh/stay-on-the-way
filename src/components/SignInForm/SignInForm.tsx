@@ -1,6 +1,7 @@
 import * as React from 'react';
 import SignForm from '../SignForm';
 import InputGroup from '../InputGroup';
+import CheckboxGroup from '../CheckboxGroup';
 
 export default function SignInForm(props: ISignUpFormProps) {
     return <SignForm
@@ -30,6 +31,11 @@ export default function SignInForm(props: ISignUpFormProps) {
             iconClass="fas fa-lock"
             placeholder="Password..."
             onChange={props.passwordChanged}
+        />
+
+        <CheckboxGroup
+            title="Save me"
+            onChange={() => alert("Changed")}
         />
     </SignForm>
 }
