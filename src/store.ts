@@ -1,4 +1,6 @@
-import { createStore } from 'redux';
-import reducers from './redux';
+import { init } from '@rematch/core';
+import * as models from './models';
 
-export default createStore(reducers);
+export default init({
+  models
+});
