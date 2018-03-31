@@ -28,7 +28,9 @@ export default class AuthForm extends React.PureComponent<
   }
 }
 
-export interface AuthFormProps {}
+export interface AuthFormProps {
+
+}
 
 export interface AuthFormState {
   isFlipped: boolean;

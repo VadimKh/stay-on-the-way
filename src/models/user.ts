@@ -4,5 +4,10 @@ export const user: Model = {
   name: 'user',
   state: {
     name: 'Mr. Anderson'
+  },
+  selectors: {
+      isAuthenticated(state) {
+          return false
+      }
   }
 };
