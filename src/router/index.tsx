@@ -9,10 +9,10 @@ import { AuthView } from '../views/AuthView';
 
 const MainRouter = () => (
   <Router>
-      <div>
+      <div className="main-container">
+        <PrivateRoute path="/" exact component={Protected} redirect="/login" />
         <Route path="/public" component={Public} />
         <Route path="/login" component={AuthView} />
-        <PrivateRoute path="/" exact component={Protected} />
       </div>
   </Router>
 );

@@ -7,7 +7,7 @@ export const user: Model = {
   },
   selectors: {
       isAuthenticated(state) {
-          return false
+          return !!state.name
       }
   }
 };

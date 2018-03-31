@@ -11,23 +11,24 @@ import { connect } from 'react-redux';
 const WrappedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
-    render={props =>
-      props.isAuthenticated ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: props.redirect,
-            state: { from: props.location }
-          }}
-        />
-      )
+    render={props => {
+        return rest.isAuthenticated ? (
+            <Component {...props} />
+          ) : (
+            <Redirect
+              to={{
+                pathname: rest.redirect,
+                state: { from: props.location }
+              }}
+            />
+          )
+    }
     }
   />
 );
 
 export const PrivateRoute = connect(state => ({
-  isAuthenticated: select.user.isAuthenticated(state)
+    isAuthenticated: select.user.isAuthenticated(state)
 }))(WrappedRoute);
 
 export interface PrivateRouteProps extends RouteComponentProps {
